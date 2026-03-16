@@ -1,0 +1,34 @@
+aid: apache-zipkin
+name: Apache Zipkin
+description: >-
+  Apache Zipkin is a distributed tracing system that helps gather timing data needed to troubleshoot latency problems in service architectures. It manages both the collection and lookup of this data through a collector and query service.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Distributed Tracing
+  - Observability
+  - Monitoring
+  - Microservices
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-zipkin/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-zipkin:apache-zipkin-api
+    name: Apache Zipkin API
+    description: >-
+      Zipkin provides a REST API for trace storage and query, a SpanCollector API for reporting trace data, and client instrumentation libraries through Brave (Java), with support for OpenTelemetry and Zipkin protocol across many languages.
+    humanURL: https://zipkin.io/zipkin-api/
+    tags:
+      - REST
+      - Tracing
+      - Spans
+    properties:
+      - type: Documentation
+        url: https://zipkin.io/zipkin-api/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
