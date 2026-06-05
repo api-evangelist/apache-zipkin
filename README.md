@@ -1,13 +1,22 @@
 # Apache Zipkin (apache-zipkin)
-Apache Zipkin is a distributed tracing system that helps gather timing data needed to troubleshoot latency problems in service architectures. It provides a REST API, web UI, and multiple storage backends for collecting and querying distributed trace data.
 
-**URL:** [https://zipkin.io/](https://zipkin.io/)
+Apache Zipkin is a distributed tracing system that helps gather timing data needed to troubleshoot latency problems in service architectures. It manages both the collection and lookup of tracing data through a collector and query service. Zipkin provides a REST API, web UI, and multiple storage backends (Cassandra, Elasticsearch, MySQL). It supports the B3 propagation format and is compatible with OpenZipkin instrumentation libraries. Originally created at Twitter, it is now maintained as an open-source project.
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apache-zipkin/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-zipkin/refs/heads/main/apis.yml)
 
-## Tags:
+## Scope
 
- - Distributed Tracing, Microservices, Monitoring, Observability, Open Source
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
+
+## Tags
+
+- Distributed Tracing
+- Microservices
+- Monitoring
+- Observability
+- Open Source
 
 ## Timestamps
 
@@ -17,64 +26,41 @@ Apache Zipkin is a distributed tracing system that helps gather timing data need
 ## APIs
 
 ### Apache Zipkin REST API
-REST API v2 for querying trace data including GET /api/v2/services, GET /api/v2/traces, GET /api/v2/trace/{traceId}, and GET /api/v2/dependencies for service dependency graphs.
 
-**Human URL:** [https://zipkin.io/zipkin-api/](https://zipkin.io/zipkin-api/)
+The Zipkin REST API v2 provides endpoints for querying trace data, service names, span names, and dependencies. Key endpoints include GET /api/v2/services (list services), GET /api/v2/spans (list span names for a service), GET /api/v2/traces (search traces by service, span, tags, duration), GET /api/v2/trace/{traceId} (get a specific trace), and GET /api/v2/dependencies (service dependency graph). Span reporting uses POST /api/v2/spans for JSON format or POST /api/v2/spans for Thrift format.
 
-#### Tags:
+- **Human URL:** [https://zipkin.io/zipkin-api/](https://zipkin.io/zipkin-api/)
 
- - REST, Distributed Tracing, Monitoring, Observability
+#### Tags
+
+- REST
+- Distributed Tracing
+- Monitoring
+- Observability
 
 #### Properties
 
 - [Documentation](https://zipkin.io/zipkin-api/)
-- [OpenAPI](https://raw.githubusercontent.com/openzipkin/zipkin-api/master/zipkin2-api.yaml)
+- [OpenAPI](https://raw.githubusercontent.com/openzipkin/zipkin-api/master/zipkin2-api.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/apache-zipkin.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/apache-zipkin.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
-- [GitHubRepository](https://github.com/openzipkin/zipkin)
+- [GitHub Repository](https://github.com/openzipkin/zipkin)
 - [Documentation](https://zipkin.io/pages/documentation.html)
 - [Portal](https://zipkin.io/)
-- [GettingStarted](https://zipkin.io/pages/quickstart.html)
-- [ReleaseNotes](https://github.com/openzipkin/zipkin/releases)
+- [Getting Started](https://zipkin.io/pages/quickstart.html)
+- [Release Notes](https://github.com/openzipkin/zipkin/releases)
 - [Support](https://gitter.im/openzipkin/zipkin)
-- [TermsOfService](https://www.apache.org/licenses/)
-- [Python SDK](https://pypi.org/project/py_zipkin/)
-- [Java SDK](https://search.maven.org/search?q=io.zipkin)
-
-## Features
-
-| Name | Description |
-|------|-------------|
-| Distributed Trace Collection | Collect timing and metadata for distributed service calls with B3 propagation. |
-| Trace Query and Visualization | Web UI and REST API for searching and visualizing traces with latency analysis. |
-| Service Dependency Graph | Automatic service call graph generation from collected trace data. |
-| Multiple Storage Backends | Cassandra, Elasticsearch, and MySQL storage backends. |
-| OpenTelemetry Compatible | Accepts OTLP/Zipkin spans from OpenTelemetry instrumented services. |
-| B3 Propagation | Standard B3 trace propagation headers for distributed context passing. |
-
-## Use Cases
-
-| Name | Description |
-|------|-------------|
-| Microservices Latency Troubleshooting | Identify bottlenecks and slow service calls in distributed architectures. |
-| Service Dependency Mapping | Automatically discover and visualize service-to-service call graphs. |
-| Performance Regression Detection | Compare trace data before and after deployments to detect regressions. |
-| Root Cause Analysis | Follow distributed call chains to identify root causes of errors. |
-
-## Integrations
-
-| Name | Description |
-|------|-------------|
-| Spring Cloud Sleuth | Spring Boot auto-instrumentation for trace propagation and Zipkin reporting. |
-| Brave | Java instrumentation library for adding Zipkin tracing to Java applications. |
-| Elasticsearch | Elasticsearch storage backend for scalable trace data storage. |
-| Apache Cassandra | Cassandra storage backend for high-volume trace data. |
-| OpenTelemetry | OpenTelemetry Zipkin exporter for OTLP traces. |
-| Kafka | Kafka collector for high-throughput microservice span ingestion. |
+- [Terms of Service](https://www.apache.org/licenses/)
+- [SDK](https://pypi.org/project/py_zipkin/)
+- [SDK](https://search.maven.org/search?q=io.zipkin)
+- [Features](undefined)
+- [Use Cases](undefined)
+- [Integrations](undefined)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** info@apievangelist.com
