@@ -1,0 +1,1298 @@
+{
+  "item": [
+    {
+      "id": "d619cd27-487e-4ab6-9aa3-28ca00dffd06",
+      "name": "spans",
+      "description": {
+        "content": "Ingest spans and query span names",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef03ee4b-b4e8-4ee9-9972-cf23e5ab4d9c",
+          "name": "Get span names recorded by a service",
+          "request": {
+            "name": "Get span names recorded by a service",
+            "description": {},
+            "url": {
+              "path": [
+                "spans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "serviceName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "34331f70-2704-4f3f-9721-695f047675c2",
+              "name": "Array of span names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "serviceName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98694de4-634b-400a-bc3d-5cea7eb253e0",
+          "name": "Upload a list of spans",
+          "request": {
+            "name": "Upload a list of spans",
+            "description": {},
+            "url": {
+              "path": [
+                "spans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"traceId\": \"<string>\",\n    \"id\": \"<string>\",\n    \"parentId\": \"<string>\",\n    \"name\": \"<string>\",\n    \"kind\": \"<string>\",\n    \"timestamp\": \"<long>\",\n    \"duration\": \"<long>\",\n    \"localEndpoint\": {\n      \"serviceName\": \"<string>\",\n      \"ipv4\": \"<ipv4>\",\n      \"ipv6\": \"<ipv6>\",\n      \"port\": \"<integer>\"\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"<string>\",\n      \"ipv4\": \"<ipv4>\",\n      \"ipv6\": \"<ipv6>\",\n      \"port\": \"<integer>\"\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": \"<long>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"timestamp\": \"<long>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"debug\": \"<boolean>\",\n    \"shared\": \"<boolean>\"\n  },\n  {\n    \"traceId\": \"<string>\",\n    \"id\": \"<string>\",\n    \"parentId\": \"<string>\",\n    \"name\": \"<string>\",\n    \"kind\": \"<string>\",\n    \"timestamp\": \"<long>\",\n    \"duration\": \"<long>\",\n    \"localEndpoint\": {\n      \"serviceName\": \"<string>\",\n      \"ipv4\": \"<ipv4>\",\n      \"ipv6\": \"<ipv6>\",\n      \"port\": \"<integer>\"\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"<string>\",\n      \"ipv4\": \"<ipv4>\",\n      \"ipv6\": \"<ipv6>\",\n      \"port\": \"<integer>\"\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": \"<long>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"timestamp\": \"<long>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"debug\": \"<boolean>\",\n    \"shared\": \"<boolean>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "151d3911-7a64-499c-9d2c-b0402883e1b3",
+              "name": "Spans accepted for processing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"traceId\": \"d9c27d13eed95d5160975d9e4131e\",\n    \"id\": \"0968298ecb8cd3b3\",\n    \"parentId\": \"082f41c520d03184\",\n    \"name\": \"string\",\n    \"kind\": \"PRODUCER\",\n    \"timestamp\": 4012,\n    \"duration\": 5450,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"4.95.244.218\",\n      \"ipv6\": \"dbf4:7ac1:b54a:2eb0:6001:88e3:fed5:ad14\",\n      \"port\": 8290\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"91.104.247.27\",\n      \"ipv6\": \"635f:952d:890c:092b:bd80:43aa:5fc2:c7f2\",\n      \"port\": 9576\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 5554,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 6405,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\"\n    },\n    \"debug\": true,\n    \"shared\": false\n  },\n  {\n    \"traceId\": \"1fb888b11ef7457b81e894b994\",\n    \"id\": \"e054e184a6bd7a37\",\n    \"parentId\": \"5633edb1507ca94a\",\n    \"name\": \"string\",\n    \"kind\": \"CLIENT\",\n    \"timestamp\": 3196,\n    \"duration\": 3333,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"194.37.85.151\",\n      \"ipv6\": \"df86:e08f:549d:ff21:b847:f65c:91af:0263\",\n      \"port\": 8323\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"13.3.38.2\",\n      \"ipv6\": \"0453:13e7:34a1:caa8:420a:38ed:b0eb:60d8\",\n      \"port\": 6733\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 708,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 6218,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"debug\": true,\n    \"shared\": true\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58e30659-9e72-4282-a334-cfdae1fb0f70",
+              "name": "Malformed span payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"traceId\": \"d9c27d13eed95d5160975d9e4131e\",\n    \"id\": \"0968298ecb8cd3b3\",\n    \"parentId\": \"082f41c520d03184\",\n    \"name\": \"string\",\n    \"kind\": \"PRODUCER\",\n    \"timestamp\": 4012,\n    \"duration\": 5450,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"4.95.244.218\",\n      \"ipv6\": \"dbf4:7ac1:b54a:2eb0:6001:88e3:fed5:ad14\",\n      \"port\": 8290\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"91.104.247.27\",\n      \"ipv6\": \"635f:952d:890c:092b:bd80:43aa:5fc2:c7f2\",\n      \"port\": 9576\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 5554,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 6405,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\"\n    },\n    \"debug\": true,\n    \"shared\": false\n  },\n  {\n    \"traceId\": \"1fb888b11ef7457b81e894b994\",\n    \"id\": \"e054e184a6bd7a37\",\n    \"parentId\": \"5633edb1507ca94a\",\n    \"name\": \"string\",\n    \"kind\": \"CLIENT\",\n    \"timestamp\": 3196,\n    \"duration\": 3333,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"194.37.85.151\",\n      \"ipv6\": \"df86:e08f:549d:ff21:b847:f65c:91af:0263\",\n      \"port\": 8323\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"13.3.38.2\",\n      \"ipv6\": \"0453:13e7:34a1:caa8:420a:38ed:b0eb:60d8\",\n      \"port\": 6733\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 708,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 6218,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"debug\": true,\n    \"shared\": true\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7e5dbb0e-73fe-4878-8f6c-42353ef7703a",
+      "name": "traces",
+      "description": {
+        "content": "Query trace data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d45ad1ee-08b9-4825-93cb-31602a095354",
+          "name": "Search traces matching filter criteria",
+          "request": {
+            "name": "Search traces matching filter criteria",
+            "description": {},
+            "url": {
+              "path": [
+                "traces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "serviceName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "spanName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "annotationQuery",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minDuration",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxDuration",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTs",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lookback",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2cc3a9b1-d980-4515-a1a6-dbdb8fb2f939",
+              "name": "Array of traces (each a list of spans)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "serviceName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "spanName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "annotationQuery",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "minDuration",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "maxDuration",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "endTs",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "lookback",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  [\n    {\n      \"traceId\": \"bc9fa30bfaadc231\",\n      \"id\": \"629170d6912133d9\",\n      \"parentId\": \"29935f7903fe3457\",\n      \"name\": \"string\",\n      \"kind\": \"CLIENT\",\n      \"timestamp\": 9702,\n      \"duration\": 1764,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"228.138.67.206\",\n        \"ipv6\": \"7dca:108e:8f51:a29e:2f95:a9ed:c8d8:1028\",\n        \"port\": 9018\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"180.173.160.166\",\n        \"ipv6\": \"905a:b39e:ef5f:bbcf:8f2f:a7fc:823d:9257\",\n        \"port\": 8474\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 7318,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 2418,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    },\n    {\n      \"traceId\": \"66f8526b5fd7b1a9c1d8866beb\",\n      \"id\": \"9176ba47057223ba\",\n      \"parentId\": \"64cb3ad31cabdf12\",\n      \"name\": \"string\",\n      \"kind\": \"PRODUCER\",\n      \"timestamp\": 2096,\n      \"duration\": 3089,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"43.53.222.116\",\n        \"ipv6\": \"7afe:0374:6542:66d2:8bd8:d28f:a1c3:47c6\",\n        \"port\": 7636\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"112.202.224.115\",\n        \"ipv6\": \"7a02:b408:bd52:8a3e:8a6d:5401:d079:f6ed\",\n        \"port\": 9374\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 3951,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1140,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    }\n  ],\n  [\n    {\n      \"traceId\": \"d70fffaa87fd272d357017\",\n      \"id\": \"5fe0b794a81af045\",\n      \"parentId\": \"bcde0b000ac1e69b\",\n      \"name\": \"string\",\n      \"kind\": \"CONSUMER\",\n      \"timestamp\": 9764,\n      \"duration\": 7532,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"190.74.195.53\",\n        \"ipv6\": \"9c62:8102:a70d:a406:d61c:bbde:6fa6:280f\",\n        \"port\": 3767\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"214.202.148.100\",\n        \"ipv6\": \"3590:4663:7b9f:e7b1:d4d5:b8a6:275c:98ab\",\n        \"port\": 4350\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 4555,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 4460,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    },\n    {\n      \"traceId\": \"a14abe6ac0b0af6907fbb06a01\",\n      \"id\": \"2b8db5b8d5901f3e\",\n      \"parentId\": \"13681a591a3e32ed\",\n      \"name\": \"string\",\n      \"kind\": \"CONSUMER\",\n      \"timestamp\": 2151,\n      \"duration\": 9337,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"203.241.82.203\",\n        \"ipv6\": \"21c6:6027:5b74:5e2f:a211:02ca:7b5c:cb72\",\n        \"port\": 2941\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"209.249.170.53\",\n        \"ipv6\": \"eac0:60b9:3c87:f56f:9c70:96cb:d0a2:5329\",\n        \"port\": 1329\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 3402,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1102,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    }\n  ]\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94fbeb79-f6ee-471c-aa25-110b7472b6a7",
+          "name": "Get a single trace by id",
+          "request": {
+            "name": "Get a single trace by id",
+            "description": {},
+            "url": {
+              "path": [
+                "trace",
+                ":traceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "traceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "852d037d-a62a-4a4b-aaf0-5280eab68a8e",
+              "name": "Trace (array of spans)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trace",
+                    ":traceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "traceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"traceId\": \"4ce595eef896815365198e9cc6e9\",\n    \"id\": \"d7ef358300874784\",\n    \"parentId\": \"0b4e1737f4e26050\",\n    \"name\": \"string\",\n    \"kind\": \"PRODUCER\",\n    \"timestamp\": 6863,\n    \"duration\": 9854,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"54.192.237.129\",\n      \"ipv6\": \"f359:752f:15a3:ce8d:3cee:5ec0:479d:8658\",\n      \"port\": 4570\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"184.135.232.213\",\n      \"ipv6\": \"ee8c:fe8c:d820:a649:6c4d:328d:a283:bbd2\",\n      \"port\": 6518\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 634,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 4027,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\"\n    },\n    \"debug\": true,\n    \"shared\": false\n  },\n  {\n    \"traceId\": \"5b1c7b01298bd8a31718fcbd\",\n    \"id\": \"ffcaffa563208b41\",\n    \"parentId\": \"26609a7916f2a14a\",\n    \"name\": \"string\",\n    \"kind\": \"CONSUMER\",\n    \"timestamp\": 9321,\n    \"duration\": 1637,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"151.56.169.127\",\n      \"ipv6\": \"b895:4671:63d0:492a:4123:fe1f:3a31:cb96\",\n      \"port\": 9880\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"239.118.191.61\",\n      \"ipv6\": \"f9de:0a2b:a935:5da2:8444:7d80:a92b:6bf0\",\n      \"port\": 6820\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 8216,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 8217,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\"\n    },\n    \"debug\": false,\n    \"shared\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67ca426d-2ba6-4edf-a024-53911c250aba",
+              "name": "Trace not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trace",
+                    ":traceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "traceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe3a498c-e543-469d-897e-ad132b899325",
+          "name": "Get multiple traces by comma-delimited ids",
+          "request": {
+            "name": "Get multiple traces by comma-delimited ids",
+            "description": {},
+            "url": {
+              "path": [
+                "traceMany"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "traceIds",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "facb57c1-b4fc-4211-a0cf-7073eb643d16",
+              "name": "Array of traces",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traceMany"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "traceIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  [\n    {\n      \"traceId\": \"bc9fa30bfaadc231\",\n      \"id\": \"629170d6912133d9\",\n      \"parentId\": \"29935f7903fe3457\",\n      \"name\": \"string\",\n      \"kind\": \"CLIENT\",\n      \"timestamp\": 9702,\n      \"duration\": 1764,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"228.138.67.206\",\n        \"ipv6\": \"7dca:108e:8f51:a29e:2f95:a9ed:c8d8:1028\",\n        \"port\": 9018\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"180.173.160.166\",\n        \"ipv6\": \"905a:b39e:ef5f:bbcf:8f2f:a7fc:823d:9257\",\n        \"port\": 8474\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 7318,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 2418,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    },\n    {\n      \"traceId\": \"66f8526b5fd7b1a9c1d8866beb\",\n      \"id\": \"9176ba47057223ba\",\n      \"parentId\": \"64cb3ad31cabdf12\",\n      \"name\": \"string\",\n      \"kind\": \"PRODUCER\",\n      \"timestamp\": 2096,\n      \"duration\": 3089,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"43.53.222.116\",\n        \"ipv6\": \"7afe:0374:6542:66d2:8bd8:d28f:a1c3:47c6\",\n        \"port\": 7636\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"112.202.224.115\",\n        \"ipv6\": \"7a02:b408:bd52:8a3e:8a6d:5401:d079:f6ed\",\n        \"port\": 9374\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 3951,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1140,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    }\n  ],\n  [\n    {\n      \"traceId\": \"d70fffaa87fd272d357017\",\n      \"id\": \"5fe0b794a81af045\",\n      \"parentId\": \"bcde0b000ac1e69b\",\n      \"name\": \"string\",\n      \"kind\": \"CONSUMER\",\n      \"timestamp\": 9764,\n      \"duration\": 7532,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"190.74.195.53\",\n        \"ipv6\": \"9c62:8102:a70d:a406:d61c:bbde:6fa6:280f\",\n        \"port\": 3767\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"214.202.148.100\",\n        \"ipv6\": \"3590:4663:7b9f:e7b1:d4d5:b8a6:275c:98ab\",\n        \"port\": 4350\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 4555,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 4460,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    },\n    {\n      \"traceId\": \"a14abe6ac0b0af6907fbb06a01\",\n      \"id\": \"2b8db5b8d5901f3e\",\n      \"parentId\": \"13681a591a3e32ed\",\n      \"name\": \"string\",\n      \"kind\": \"CONSUMER\",\n      \"timestamp\": 2151,\n      \"duration\": 9337,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"203.241.82.203\",\n        \"ipv6\": \"21c6:6027:5b74:5e2f:a211:02ca:7b5c:cb72\",\n        \"port\": 2941\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"209.249.170.53\",\n        \"ipv6\": \"eac0:60b9:3c87:f56f:9c70:96cb:d0a2:5329\",\n        \"port\": 1329\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 3402,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1102,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    }\n  ]\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dc19b47c-f199-48c6-acc0-6ac8e068ffa9",
+      "name": "services",
+      "description": {
+        "content": "Service discovery and dependency links",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6aae7ad8-9b70-481c-9d05-8decd7066e9c",
+          "name": "List service names with recorded spans",
+          "request": {
+            "name": "List service names with recorded spans",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b209df3e-0421-4739-b5b2-be96d2a23b1b",
+              "name": "Array of service names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c810e743-d362-4933-a3bc-9e39b601c532",
+          "name": "Get service dependency links",
+          "request": {
+            "name": "Get service dependency links",
+            "description": {},
+            "url": {
+              "path": [
+                "dependencies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "endTs",
+                  "value": "<long>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lookback",
+                  "value": "<long>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0fc68ec6-a9fa-45fb-8dfe-fa76cd7d1455",
+              "name": "Array of dependency links",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dependencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "endTs",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "lookback",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"parent\": \"string\",\n    \"child\": \"string\",\n    \"callCount\": 2220,\n    \"errorCount\": 2329\n  },\n  {\n    \"parent\": \"string\",\n    \"child\": \"string\",\n    \"callCount\": 202,\n    \"errorCount\": 157\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "36adaaac-10f6-479a-a185-360cb32e18d5",
+      "name": "autocomplete",
+      "description": {
+        "content": "Tag key/value autocompletion",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f28dd17-c181-4e1a-ad80-0a6f49c6614a",
+          "name": "List tag keys eligible for autocompletion",
+          "request": {
+            "name": "List tag keys eligible for autocompletion",
+            "description": {},
+            "url": {
+              "path": [
+                "autocompleteKeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a058f24-03ce-4b92-adf7-0d21f0045720",
+              "name": "Array of autocomplete keys",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autocompleteKeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7e95e9e-1acb-480e-b5cc-b47945870222",
+          "name": "List known values for an autocomplete key",
+          "request": {
+            "name": "List known values for an autocomplete key",
+            "description": {},
+            "url": {
+              "path": [
+                "autocompleteValues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5a9551b-ad44-4665-8097-9102b9868cf1",
+              "name": "Array of autocomplete values",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autocompleteValues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "9411",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{host}}:{{port}}/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9fb37e2d-df0b-42ea-b077-2be06438908d",
+    "name": "Zipkin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Zipkin's HTTP API for querying and ingesting distributed tracing data. The API exposes span ingestion and trace, dependency, and autocomplete lookup operations under the `/api/v2` base. Authentication is typically handled by a reverse proxy in front of Zipkin and is not part of the core API.\n\nContact Support:\n Name: OpenZipkin",
+      "type": "text/plain"
+    }
+  }
+}

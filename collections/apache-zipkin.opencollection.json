@@ -1,0 +1,227 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipkin API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "services",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List service names with recorded spans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/services"
+          },
+          "docs": "List service names with recorded spans"
+        },
+        {
+          "info": {
+            "name": "Get service dependency links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/dependencies",
+            "params": [
+              {
+                "name": "endTs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lookback",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get service dependency links"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "spans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get span names recorded by a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/spans",
+            "params": [
+              {
+                "name": "serviceName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get span names recorded by a service"
+        },
+        {
+          "info": {
+            "name": "Upload a list of spans",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{host}:{port}/api/v2/spans",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload a list of spans"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "traces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search traces matching filter criteria",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/traces",
+            "params": [
+              {
+                "name": "serviceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "spanName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "annotationQuery",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minDuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxDuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endTs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lookback",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search traces matching filter criteria"
+        },
+        {
+          "info": {
+            "name": "Get a single trace by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/trace/:traceId",
+            "params": [
+              {
+                "name": "traceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single trace by id"
+        },
+        {
+          "info": {
+            "name": "Get multiple traces by comma-delimited ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/traceMany",
+            "params": [
+              {
+                "name": "traceIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get multiple traces by comma-delimited ids"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "autocomplete",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tag keys eligible for autocompletion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/autocompleteKeys"
+          },
+          "docs": "List tag keys eligible for autocompletion"
+        },
+        {
+          "info": {
+            "name": "List known values for an autocomplete key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/autocompleteValues",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List known values for an autocomplete key"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
