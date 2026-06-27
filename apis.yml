@@ -57,10 +57,10 @@ common:
     url: https://gitter.im/openzipkin/zipkin
   - type: TermsOfService
     url: https://www.apache.org/licenses/
-  - type: SDK
+  - type: SDKs
     url: https://pypi.org/project/py_zipkin/
     title: Python SDK
-  - type: SDK
+  - type: SDKs
     url: https://search.maven.org/search?q=io.zipkin
     title: Java SDK
   - type: Features
