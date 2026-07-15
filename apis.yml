@@ -43,6 +43,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/openzipkin/zipkin-api/master/zipkin2-api.yaml
 common:
+  - type: AgenticAccess
+    url: agentic-access/apache-zipkin-agentic-access.yml
   - type: DomainSecurity
     url: security/apache-zipkin-domain-security.yml
   - type: GitHubRepository
