@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Zipkin autocomplete services API
+  description: Zipkin's HTTP API for querying and ingesting distributed tracing data. The API exposes span ingestion and trace, dependency, and autocomplete lookup operations under the `/api/v2` base. Authentication is typically handled by a reverse proxy in front of Zipkin and is not part of the core API.
+  version: '2.0'
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: OpenZipkin
+    url: https://zipkin.io/zipkin-api/
+servers:
+- url: http://{host}:{port}/api/v2
+  description: Zipkin server (v2 API base)
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '9411'
+tags:
+- name: services
+  description: Service discovery and dependency links
+paths:
+  /services:
+    get:
+      tags:
+      - services
+      summary: List service names with recorded spans
+      operationId: getServiceNames
+      responses:
+        '200':
+          description: Array of service names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /dependencies:
+    get:
+      tags:
+      - services
+      summary: Get service dependency links
+      operationId: getDependencies
+      parameters:
+      - name: endTs
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: lookback
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Array of dependency links
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfDependencyLinks'
+components:
+  schemas:
+    ListOfDependencyLinks:
+      type: array
+      items:
+        $ref: '#/components/schemas/DependencyLink'
+    DependencyLink:
+      type: object
+      properties:
+        parent:
+          type: string
+        child:
+          type: string
+        callCount:
+          type: integer
+          format: int64
+        errorCount:
+          type: integer
+          format: int64
