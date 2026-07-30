@@ -8,9 +8,21 @@ description: >-
   the B3 propagation format and is compatible with OpenZipkin instrumentation libraries.
   Originally created at Twitter, it is now maintained as an open-source project.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-zipkin.png
 tags:
   - Distributed Tracing
   - Microservices
@@ -23,25 +35,50 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/apache-zipkin/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: apache-zipkin:apache-zipkin-api
-    name: Apache Zipkin REST API
-    description: >-
-      The Zipkin REST API v2 provides endpoints for querying trace data, service names, span names,
-      and dependencies. Key endpoints include GET /api/v2/services (list services), GET /api/v2/spans
-      (list span names for a service), GET /api/v2/traces (search traces by service, span, tags, duration),
-      GET /api/v2/trace/{traceId} (get a specific trace), and GET /api/v2/dependencies (service dependency graph).
-      Span reporting uses POST /api/v2/spans for JSON format or POST /api/v2/spans for Thrift format.
-    humanURL: https://zipkin.io/zipkin-api/
-    tags:
-      - REST
-      - Distributed Tracing
-      - Monitoring
-      - Observability
-    properties:
-      - type: Documentation
-        url: https://zipkin.io/zipkin-api/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/openzipkin/zipkin-api/master/zipkin2-api.yaml
+- aid: apache-zipkin:apache-zipkin-autocomplete-api
+  name: Apache Zipkin autocomplete API
+  description: Tag key/value autocompletion
+  humanURL: https://zipkin.io/zipkin-api/
+  tags:
+  - autocomplete
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-zipkin-autocomplete-api-openapi.yml
+  - type: Documentation
+    url: https://zipkin.io/zipkin-api/
+- aid: apache-zipkin:apache-zipkin-services-api
+  name: Apache Zipkin services API
+  description: Service discovery and dependency links
+  humanURL: https://zipkin.io/zipkin-api/
+  tags:
+  - services
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-zipkin-services-api-openapi.yml
+  - type: Documentation
+    url: https://zipkin.io/zipkin-api/
+- aid: apache-zipkin:apache-zipkin-spans-api
+  name: Apache Zipkin spans API
+  description: Ingest spans and query span names
+  humanURL: https://zipkin.io/zipkin-api/
+  tags:
+  - spans
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-zipkin-spans-api-openapi.yml
+  - type: Documentation
+    url: https://zipkin.io/zipkin-api/
+- aid: apache-zipkin:apache-zipkin-traces-api
+  name: Apache Zipkin traces API
+  description: Query trace data
+  humanURL: https://zipkin.io/zipkin-api/
+  tags:
+  - traces
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-zipkin-traces-api-openapi.yml
+  - type: Documentation
+    url: https://zipkin.io/zipkin-api/
 common:
   - type: AgenticAccess
     url: agentic-access/apache-zipkin-agentic-access.yml
