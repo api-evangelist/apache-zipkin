@@ -1,0 +1,271 @@
+openapi: 3.1.0
+info:
+  title: Zipkin API
+  description: >-
+    Zipkin's HTTP API for querying and ingesting distributed tracing data. The
+    API exposes span ingestion and trace, dependency, and autocomplete lookup
+    operations under the `/api/v2` base. Authentication is typically handled
+    by a reverse proxy in front of Zipkin and is not part of the core API.
+  version: "2.0"
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: OpenZipkin
+    url: https://zipkin.io/zipkin-api/
+servers:
+  - url: http://{host}:{port}/api/v2
+    description: Zipkin server (v2 API base)
+    variables:
+      host:
+        default: localhost
+      port:
+        default: "9411"
+tags:
+  - name: spans
+    description: Ingest spans and query span names
+  - name: traces
+    description: Query trace data
+  - name: services
+    description: Service discovery and dependency links
+  - name: autocomplete
+    description: Tag key/value autocompletion
+paths:
+  /services:
+    get:
+      tags: [services]
+      summary: List service names with recorded spans
+      operationId: getServiceNames
+      responses:
+        '200':
+          description: Array of service names
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: string }
+  /spans:
+    get:
+      tags: [spans]
+      summary: Get span names recorded by a service
+      operationId: getSpanNames
+      parameters:
+        - name: serviceName
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Array of span names
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: string }
+    post:
+      tags: [spans]
+      summary: Upload a list of spans
+      operationId: uploadSpans
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListOfSpans'
+          application/x-protobuf:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '202':
+          description: Spans accepted for processing
+        '400':
+          description: Malformed span payload
+  /traces:
+    get:
+      tags: [traces]
+      summary: Search traces matching filter criteria
+      operationId: getTraces
+      parameters:
+        - name: serviceName
+          in: query
+          schema: { type: string }
+        - name: spanName
+          in: query
+          schema: { type: string }
+        - name: annotationQuery
+          in: query
+          schema: { type: string }
+        - name: minDuration
+          in: query
+          schema: { type: integer, format: int64 }
+        - name: maxDuration
+          in: query
+          schema: { type: integer, format: int64 }
+        - name: endTs
+          in: query
+          schema: { type: integer, format: int64 }
+        - name: lookback
+          in: query
+          schema: { type: integer, format: int64 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 10 }
+      responses:
+        '200':
+          description: Array of traces (each a list of spans)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfTraces'
+  /trace/{traceId}:
+    get:
+      tags: [traces]
+      summary: Get a single trace by id
+      operationId: getTrace
+      parameters:
+        - name: traceId
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9a-f]{16,32}$'
+      responses:
+        '200':
+          description: Trace (array of spans)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trace'
+        '404':
+          description: Trace not found
+  /traceMany:
+    get:
+      tags: [traces]
+      summary: Get multiple traces by comma-delimited ids
+      operationId: getTracesByIds
+      parameters:
+        - name: traceIds
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Array of traces
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfTraces'
+  /dependencies:
+    get:
+      tags: [services]
+      summary: Get service dependency links
+      operationId: getDependencies
+      parameters:
+        - name: endTs
+          in: query
+          required: true
+          schema: { type: integer, format: int64 }
+        - name: lookback
+          in: query
+          schema: { type: integer, format: int64 }
+      responses:
+        '200':
+          description: Array of dependency links
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfDependencyLinks'
+  /autocompleteKeys:
+    get:
+      tags: [autocomplete]
+      summary: List tag keys eligible for autocompletion
+      operationId: getAutocompleteKeys
+      responses:
+        '200':
+          description: Array of autocomplete keys
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: string }
+  /autocompleteValues:
+    get:
+      tags: [autocomplete]
+      summary: List known values for an autocomplete key
+      operationId: getAutocompleteValues
+      parameters:
+        - name: key
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Array of autocomplete values
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: string }
+components:
+  schemas:
+    Endpoint:
+      type: object
+      properties:
+        serviceName: { type: string }
+        ipv4: { type: string, format: ipv4 }
+        ipv6: { type: string, format: ipv6 }
+        port: { type: integer }
+    Annotation:
+      type: object
+      properties:
+        timestamp: { type: integer, format: int64 }
+        value: { type: string }
+    Span:
+      type: object
+      required: [traceId, id]
+      properties:
+        traceId:
+          type: string
+          pattern: '^[0-9a-f]{16,32}$'
+        id:
+          type: string
+          pattern: '^[0-9a-f]{16}$'
+        parentId:
+          type: string
+          pattern: '^[0-9a-f]{16}$'
+        name: { type: string }
+        kind:
+          type: string
+          enum: [CLIENT, SERVER, PRODUCER, CONSUMER]
+        timestamp: { type: integer, format: int64 }
+        duration: { type: integer, format: int64 }
+        localEndpoint: { $ref: '#/components/schemas/Endpoint' }
+        remoteEndpoint: { $ref: '#/components/schemas/Endpoint' }
+        annotations:
+          type: array
+          items: { $ref: '#/components/schemas/Annotation' }
+        tags:
+          type: object
+          additionalProperties: { type: string }
+        debug: { type: boolean }
+        shared: { type: boolean }
+    ListOfSpans:
+      type: array
+      items: { $ref: '#/components/schemas/Span' }
+    Trace:
+      type: array
+      items: { $ref: '#/components/schemas/Span' }
+    ListOfTraces:
+      type: array
+      items: { $ref: '#/components/schemas/Trace' }
+    DependencyLink:
+      type: object
+      properties:
+        parent: { type: string }
+        child: { type: string }
+        callCount: { type: integer, format: int64 }
+        errorCount: { type: integer, format: int64 }
+    ListOfDependencyLinks:
+      type: array
+      items: { $ref: '#/components/schemas/DependencyLink' }

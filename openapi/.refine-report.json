@@ -1,0 +1,20 @@
+{
+  "provider": "apache-zipkin",
+  "sources": [
+    "apache-zipkin-autocomplete-api-openapi.yml",
+    "apache-zipkin-services-api-openapi.yml",
+    "apache-zipkin-spans-api-openapi.yml",
+    "apache-zipkin-traces-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-zipkin-autocomplete-api-openapi.yml",
+    "apache-zipkin-services-api-openapi.yml",
+    "apache-zipkin-spans-api-openapi.yml",
+    "apache-zipkin-traces-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
