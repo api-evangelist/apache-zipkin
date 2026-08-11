@@ -80,6 +80,15 @@ apis:
   - type: Documentation
     url: https://zipkin.io/zipkin-api/
 common:
+  - type: IssueTracker
+    url: https://github.com/openzipkin/zipkin/issues
+  - type: SecurityPolicy
+    url: https://github.com/openzipkin/zipkin/blob/master/SECURITY.md
+  - type: ContributionGuide
+    url: https://github.com/openzipkin/zipkin/blob/master/.github/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/openzipkin/zipkin/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/apache-zipkin-agentic-access.yml
   - type: DomainSecurity
