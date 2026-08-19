@@ -1,0 +1,523 @@
+{
+  "item": [
+    {
+      "id": "064f5317-6e4c-4e37-bdb7-b9b2ab651493",
+      "name": "traces",
+      "description": {
+        "content": "Query trace data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "36a15be7-d0b5-4b1b-94ff-0a9d1e46c9be",
+          "name": "Search traces matching filter criteria",
+          "request": {
+            "name": "Search traces matching filter criteria",
+            "description": {},
+            "url": {
+              "path": [
+                "traces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "serviceName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "spanName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "annotationQuery",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minDuration",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxDuration",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTs",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lookback",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b78d1c2b-70ab-4afa-8b70-e50e8472208d",
+              "name": "Array of traces (each a list of spans)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "serviceName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "spanName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "annotationQuery",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "minDuration",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "maxDuration",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "endTs",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "lookback",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  [\n    {\n      \"traceId\": \"4bf4afb119febc246588c\",\n      \"id\": \"d3a2ebf70f6ca36d\",\n      \"parentId\": \"ca834b68cbf4d8ed\",\n      \"name\": \"string\",\n      \"kind\": \"SERVER\",\n      \"timestamp\": 53,\n      \"duration\": 2163,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"3.253.143.127\",\n        \"ipv6\": \"8f02:79d4:3b1b:3062:a138:c558:5c77:046b\",\n        \"port\": 9126\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"170.254.255.231\",\n        \"ipv6\": \"c82c:c74c:0905:f81b:2461:8fbf:ff71:2a93\",\n        \"port\": 3637\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 8392,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 3281,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": false\n    },\n    {\n      \"traceId\": \"4cdaa8ffd70b38e51e1011c793ad\",\n      \"id\": \"af6a5e11f9be6f6d\",\n      \"parentId\": \"16d5f7a22700f508\",\n      \"name\": \"string\",\n      \"kind\": \"SERVER\",\n      \"timestamp\": 5883,\n      \"duration\": 5550,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"127.251.230.213\",\n        \"ipv6\": \"2ad2:8f4f:8612:9dc1:d19c:35cb:a77b:6317\",\n        \"port\": 2523\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"75.155.116.200\",\n        \"ipv6\": \"3448:bd34:614b:ce01:3f3a:ec22:329b:4123\",\n        \"port\": 8123\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 5773,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1552,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    }\n  ],\n  [\n    {\n      \"traceId\": \"7fbf01bc6267c00aa2\",\n      \"id\": \"d5c2b2a8fa8da88c\",\n      \"parentId\": \"0326abb666d5ed8b\",\n      \"name\": \"string\",\n      \"kind\": \"CONSUMER\",\n      \"timestamp\": 9901,\n      \"duration\": 9151,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"14.230.169.84\",\n        \"ipv6\": \"739f:6db6:5b0b:54a5:1e05:5fd8:e5ea:bc6f\",\n        \"port\": 6091\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"57.145.164.117\",\n        \"ipv6\": \"be53:310b:0b8c:e427:3fa3:40da:3aad:39c8\",\n        \"port\": 8386\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 2802,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1560,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": false\n    },\n    {\n      \"traceId\": \"fe6a71bff109759eb\",\n      \"id\": \"597147becec5e096\",\n      \"parentId\": \"340afd0bbd499a2b\",\n      \"name\": \"string\",\n      \"kind\": \"CLIENT\",\n      \"timestamp\": 6765,\n      \"duration\": 3141,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"124.38.217.161\",\n        \"ipv6\": \"f991:bead:9c4a:d766:d37c:cabf:dd4a:260b\",\n        \"port\": 5737\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"225.206.174.183\",\n        \"ipv6\": \"136f:fb51:dd33:ffd0:68cb:2c9a:ed04:c5be\",\n        \"port\": 6826\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 8836,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 5069,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": false\n    }\n  ]\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1f0daa1-26ac-44f4-a309-5e2e4d39b913",
+          "name": "Get a single trace by id",
+          "request": {
+            "name": "Get a single trace by id",
+            "description": {},
+            "url": {
+              "path": [
+                "trace",
+                ":traceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "traceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2b2b2a5-f45b-4399-ae96-d8c57dc3825a",
+              "name": "Trace (array of spans)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trace",
+                    ":traceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "traceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"traceId\": \"480a2281adc5391b019d9f83078\",\n    \"id\": \"7d9cdc6b86a94cd0\",\n    \"parentId\": \"74cf754be8423c8c\",\n    \"name\": \"string\",\n    \"kind\": \"CONSUMER\",\n    \"timestamp\": 4260,\n    \"duration\": 3692,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"4.194.31.229\",\n      \"ipv6\": \"9bf3:a807:3c71:4688:8b72:f20c:74ef:c2a4\",\n      \"port\": 5698\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"234.48.254.86\",\n      \"ipv6\": \"d1c0:d95f:eb12:8e84:ca7d:f6a5:ed31:362b\",\n      \"port\": 6525\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 6011,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 588,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\"\n    },\n    \"debug\": false,\n    \"shared\": false\n  },\n  {\n    \"traceId\": \"cf90f338cc62d1ad273481\",\n    \"id\": \"382f921736f4a41c\",\n    \"parentId\": \"84cb464e599d9bd6\",\n    \"name\": \"string\",\n    \"kind\": \"CONSUMER\",\n    \"timestamp\": 3091,\n    \"duration\": 8719,\n    \"localEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"240.195.131.202\",\n      \"ipv6\": \"809e:65ee:d4f1:3246:570f:8c14:3902:f621\",\n      \"port\": 3688\n    },\n    \"remoteEndpoint\": {\n      \"serviceName\": \"string\",\n      \"ipv4\": \"144.59.80.107\",\n      \"ipv6\": \"8067:2550:cd6e:10fd:0b95:d0a0:8415:e6b2\",\n      \"port\": 6395\n    },\n    \"annotations\": [\n      {\n        \"timestamp\": 5610,\n        \"value\": \"string\"\n      },\n      {\n        \"timestamp\": 8695,\n        \"value\": \"string\"\n      }\n    ],\n    \"tags\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"debug\": false,\n    \"shared\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3ab2a5d-fb20-4db2-bf87-1d4e4c0e1dcc",
+              "name": "Trace not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trace",
+                    ":traceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "traceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be581b3c-78d1-4669-ac66-f47a8f0c4afd",
+          "name": "Get multiple traces by comma-delimited ids",
+          "request": {
+            "name": "Get multiple traces by comma-delimited ids",
+            "description": {},
+            "url": {
+              "path": [
+                "traceMany"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "traceIds",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "62233465-0098-42be-8938-325316ffe576",
+              "name": "Array of traces",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traceMany"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "traceIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  [\n    {\n      \"traceId\": \"4bf4afb119febc246588c\",\n      \"id\": \"d3a2ebf70f6ca36d\",\n      \"parentId\": \"ca834b68cbf4d8ed\",\n      \"name\": \"string\",\n      \"kind\": \"SERVER\",\n      \"timestamp\": 53,\n      \"duration\": 2163,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"3.253.143.127\",\n        \"ipv6\": \"8f02:79d4:3b1b:3062:a138:c558:5c77:046b\",\n        \"port\": 9126\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"170.254.255.231\",\n        \"ipv6\": \"c82c:c74c:0905:f81b:2461:8fbf:ff71:2a93\",\n        \"port\": 3637\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 8392,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 3281,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": false\n    },\n    {\n      \"traceId\": \"4cdaa8ffd70b38e51e1011c793ad\",\n      \"id\": \"af6a5e11f9be6f6d\",\n      \"parentId\": \"16d5f7a22700f508\",\n      \"name\": \"string\",\n      \"kind\": \"SERVER\",\n      \"timestamp\": 5883,\n      \"duration\": 5550,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"127.251.230.213\",\n        \"ipv6\": \"2ad2:8f4f:8612:9dc1:d19c:35cb:a77b:6317\",\n        \"port\": 2523\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"75.155.116.200\",\n        \"ipv6\": \"3448:bd34:614b:ce01:3f3a:ec22:329b:4123\",\n        \"port\": 8123\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 5773,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1552,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": true\n    }\n  ],\n  [\n    {\n      \"traceId\": \"7fbf01bc6267c00aa2\",\n      \"id\": \"d5c2b2a8fa8da88c\",\n      \"parentId\": \"0326abb666d5ed8b\",\n      \"name\": \"string\",\n      \"kind\": \"CONSUMER\",\n      \"timestamp\": 9901,\n      \"duration\": 9151,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"14.230.169.84\",\n        \"ipv6\": \"739f:6db6:5b0b:54a5:1e05:5fd8:e5ea:bc6f\",\n        \"port\": 6091\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"57.145.164.117\",\n        \"ipv6\": \"be53:310b:0b8c:e427:3fa3:40da:3aad:39c8\",\n        \"port\": 8386\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 2802,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 1560,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": false\n    },\n    {\n      \"traceId\": \"fe6a71bff109759eb\",\n      \"id\": \"597147becec5e096\",\n      \"parentId\": \"340afd0bbd499a2b\",\n      \"name\": \"string\",\n      \"kind\": \"CLIENT\",\n      \"timestamp\": 6765,\n      \"duration\": 3141,\n      \"localEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"124.38.217.161\",\n        \"ipv6\": \"f991:bead:9c4a:d766:d37c:cabf:dd4a:260b\",\n        \"port\": 5737\n      },\n      \"remoteEndpoint\": {\n        \"serviceName\": \"string\",\n        \"ipv4\": \"225.206.174.183\",\n        \"ipv6\": \"136f:fb51:dd33:ffd0:68cb:2c9a:ed04:c5be\",\n        \"port\": 6826\n      },\n      \"annotations\": [\n        {\n          \"timestamp\": 8836,\n          \"value\": \"string\"\n        },\n        {\n          \"timestamp\": 5069,\n          \"value\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"debug\": false,\n      \"shared\": false\n    }\n  ]\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "9411",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{host}}:{{port}}/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4c6533cc-8578-4f82-baf2-7f5971a2c3de",
+    "name": "Zipkin autocomplete traces API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Zipkin's HTTP API for querying and ingesting distributed tracing data. The API exposes span ingestion and trace, dependency, and autocomplete lookup operations under the `/api/v2` base. Authentication is typically handled by a reverse proxy in front of Zipkin and is not part of the core API.\n\nContact Support:\n Name: OpenZipkin",
+      "type": "text/plain"
+    }
+  }
+}

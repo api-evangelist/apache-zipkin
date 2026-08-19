@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipkin autocomplete traces API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "traces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search traces matching filter criteria",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/traces",
+            "params": [
+              {
+                "name": "serviceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "spanName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "annotationQuery",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minDuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxDuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endTs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lookback",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search traces matching filter criteria"
+        },
+        {
+          "info": {
+            "name": "Get a single trace by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/trace/:traceId",
+            "params": [
+              {
+                "name": "traceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single trace by id"
+        },
+        {
+          "info": {
+            "name": "Get multiple traces by comma-delimited ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/traceMany",
+            "params": [
+              {
+                "name": "traceIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get multiple traces by comma-delimited ids"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

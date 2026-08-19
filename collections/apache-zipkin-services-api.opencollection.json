@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipkin autocomplete services API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "services",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List service names with recorded spans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/services"
+          },
+          "docs": "List service names with recorded spans"
+        },
+        {
+          "info": {
+            "name": "Get service dependency links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/dependencies",
+            "params": [
+              {
+                "name": "endTs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lookback",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get service dependency links"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

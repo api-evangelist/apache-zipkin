@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipkin autocomplete spans API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "spans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get span names recorded by a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/api/v2/spans",
+            "params": [
+              {
+                "name": "serviceName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get span names recorded by a service"
+        },
+        {
+          "info": {
+            "name": "Upload a list of spans",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{host}:{port}/api/v2/spans",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload a list of spans"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
