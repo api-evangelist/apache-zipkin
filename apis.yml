@@ -60,7 +60,7 @@ apis:
   description: Tag key/value autocompletion
   humanURL: https://zipkin.io/zipkin-api/
   tags:
-  - autocomplete
+  - Autocomplete
   tags_raw:
   - autocomplete
   properties:
@@ -86,7 +86,7 @@ apis:
   description: Ingest spans and query span names
   humanURL: https://zipkin.io/zipkin-api/
   tags:
-  - spans
+  - Spans
   tags_raw:
   - spans
   properties:
@@ -99,7 +99,7 @@ apis:
   description: Query trace data
   humanURL: https://zipkin.io/zipkin-api/
   tags:
-  - traces
+  - Traces
   tags_raw:
   - traces
   properties:
