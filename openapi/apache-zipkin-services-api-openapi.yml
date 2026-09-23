@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Zipkin autocomplete services API
+  title: Zipkin Services API
   description: Zipkin's HTTP API for querying and ingesting distributed tracing data. The API exposes span ingestion and trace, dependency, and autocomplete lookup operations under the `/api/v2` base. Authentication is typically handled by a reverse proxy in front of Zipkin and is not part of the core API.
   version: '2.0'
   license:
@@ -18,13 +18,13 @@ servers:
     port:
       default: '9411'
 tags:
-- name: services
+- name: Services
   description: Service discovery and dependency links
 paths:
   /services:
     get:
       tags:
-      - services
+      - Services
       summary: List service names with recorded spans
       operationId: getServiceNames
       responses:
@@ -39,7 +39,7 @@ paths:
   /dependencies:
     get:
       tags:
-      - services
+      - Services
       summary: Get service dependency links
       operationId: getDependencies
       parameters:
@@ -63,10 +63,6 @@ paths:
                 $ref: '#/components/schemas/ListOfDependencyLinks'
 components:
   schemas:
-    ListOfDependencyLinks:
-      type: array
-      items:
-        $ref: '#/components/schemas/DependencyLink'
     DependencyLink:
       type: object
       properties:
@@ -80,3 +76,7 @@ components:
         errorCount:
           type: integer
           format: int64
+    ListOfDependencyLinks:
+      type: array
+      items:
+        $ref: '#/components/schemas/DependencyLink'

@@ -1,10 +1,7 @@
 {
   "provider": "apache-zipkin",
   "sources": [
-    "apache-zipkin-autocomplete-api-openapi.yml",
-    "apache-zipkin-services-api-openapi.yml",
-    "apache-zipkin-spans-api-openapi.yml",
-    "apache-zipkin-traces-api-openapi.yml"
+    "_original/apache-zipkin-openapi.yml"
   ],
   "outputs": [
     "apache-zipkin-autocomplete-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-zipkin-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "apache-zipkin-autocomplete-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-zipkin-services-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-zipkin-spans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-zipkin-traces-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

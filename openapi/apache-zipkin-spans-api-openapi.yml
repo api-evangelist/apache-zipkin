@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Zipkin autocomplete spans API
+  title: Zipkin Spans API
   description: Zipkin's HTTP API for querying and ingesting distributed tracing data. The API exposes span ingestion and trace, dependency, and autocomplete lookup operations under the `/api/v2` base. Authentication is typically handled by a reverse proxy in front of Zipkin and is not part of the core API.
   version: '2.0'
   license:
@@ -18,13 +18,13 @@ servers:
     port:
       default: '9411'
 tags:
-- name: spans
+- name: Spans
   description: Ingest spans and query span names
 paths:
   /spans:
     get:
       tags:
-      - spans
+      - Spans
       summary: Get span names recorded by a service
       operationId: getSpanNames
       parameters:
@@ -44,7 +44,7 @@ paths:
                   type: string
     post:
       tags:
-      - spans
+      - Spans
       summary: Upload a list of spans
       operationId: uploadSpans
       requestBody:
@@ -64,10 +64,6 @@ paths:
           description: Malformed span payload
 components:
   schemas:
-    ListOfSpans:
-      type: array
-      items:
-        $ref: '#/components/schemas/Span'
     Span:
       type: object
       required:
@@ -114,14 +110,6 @@ components:
           type: boolean
         shared:
           type: boolean
-    Annotation:
-      type: object
-      properties:
-        timestamp:
-          type: integer
-          format: int64
-        value:
-          type: string
     Endpoint:
       type: object
       properties:
@@ -135,3 +123,15 @@ components:
           format: ipv6
         port:
           type: integer
+    ListOfSpans:
+      type: array
+      items:
+        $ref: '#/components/schemas/Span'
+    Annotation:
+      type: object
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+        value:
+          type: string
