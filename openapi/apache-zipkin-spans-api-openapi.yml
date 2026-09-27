@@ -64,6 +64,23 @@ paths:
           description: Malformed span payload
 components:
   schemas:
+    ListOfSpans:
+      type: array
+      items:
+        $ref: '#/components/schemas/Span'
+    Endpoint:
+      type: object
+      properties:
+        serviceName:
+          type: string
+        ipv4:
+          type: string
+          format: ipv4
+        ipv6:
+          type: string
+          format: ipv6
+        port:
+          type: integer
     Span:
       type: object
       required:
@@ -110,23 +127,6 @@ components:
           type: boolean
         shared:
           type: boolean
-    Endpoint:
-      type: object
-      properties:
-        serviceName:
-          type: string
-        ipv4:
-          type: string
-          format: ipv4
-        ipv6:
-          type: string
-          format: ipv6
-        port:
-          type: integer
-    ListOfSpans:
-      type: array
-      items:
-        $ref: '#/components/schemas/Span'
     Annotation:
       type: object
       properties:

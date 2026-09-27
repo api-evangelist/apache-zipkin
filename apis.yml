@@ -42,13 +42,14 @@ tags:
   - Microservices
   - Monitoring
   - Observability
-  - Open-Source
+  - Open Source
 tags_raw:
   - Distributed Tracing
   - Microservices
   - Monitoring
   - Observability
   - Open Source
+  - Open-Source
 created: '2026-03-16'
 modified: '2026-04-19'
 url: >-
@@ -56,7 +57,7 @@ url: >-
 specificationVersion: '0.23'
 apis:
 - aid: apache-zipkin:apache-zipkin-autocomplete-api
-  name: Apache Zipkin autocomplete API
+  name: Apache Zipkin Autocomplete API
   description: Tag key/value autocompletion
   humanURL: https://zipkin.io/zipkin-api/
   tags:
@@ -69,7 +70,7 @@ apis:
   - type: Documentation
     url: https://zipkin.io/zipkin-api/
 - aid: apache-zipkin:apache-zipkin-services-api
-  name: Apache Zipkin services API
+  name: Apache Zipkin Services API
   description: Service discovery and dependency links
   humanURL: https://zipkin.io/zipkin-api/
   tags:
@@ -82,7 +83,7 @@ apis:
   - type: Documentation
     url: https://zipkin.io/zipkin-api/
 - aid: apache-zipkin:apache-zipkin-spans-api
-  name: Apache Zipkin spans API
+  name: Apache Zipkin Spans API
   description: Ingest spans and query span names
   humanURL: https://zipkin.io/zipkin-api/
   tags:
@@ -95,7 +96,7 @@ apis:
   - type: Documentation
     url: https://zipkin.io/zipkin-api/
 - aid: apache-zipkin:apache-zipkin-traces-api
-  name: Apache Zipkin traces API
+  name: Apache Zipkin Traces API
   description: Query trace data
   humanURL: https://zipkin.io/zipkin-api/
   tags:

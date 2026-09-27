@@ -169,6 +169,10 @@ components:
           format: int64
         value:
           type: string
+    Trace:
+      type: array
+      items:
+        $ref: '#/components/schemas/Span'
     Endpoint:
       type: object
       properties:
@@ -182,10 +186,6 @@ components:
           format: ipv6
         port:
           type: integer
-    Trace:
-      type: array
-      items:
-        $ref: '#/components/schemas/Span'
     ListOfTraces:
       type: array
       items:
