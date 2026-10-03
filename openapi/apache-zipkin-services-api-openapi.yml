@@ -63,6 +63,10 @@ paths:
                 $ref: '#/components/schemas/ListOfDependencyLinks'
 components:
   schemas:
+    ListOfDependencyLinks:
+      type: array
+      items:
+        $ref: '#/components/schemas/DependencyLink'
     DependencyLink:
       type: object
       properties:
@@ -76,7 +80,3 @@ components:
         errorCount:
           type: integer
           format: int64
-    ListOfDependencyLinks:
-      type: array
-      items:
-        $ref: '#/components/schemas/DependencyLink'
