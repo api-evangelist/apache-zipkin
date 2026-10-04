@@ -1,0 +1,44 @@
+slug: apache-zipkin
+provider: Apache Zipkin
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Traces
+  spec_file: apache-zipkin-traces-api-openapi.yml
+  capability_id: BC-4220.20
+  capability_id_l1: BC-4220
+  capability_name: Observability Management
+  confidence: 0.85
+  evidence: GET /traces getTraces 'Search traces matching filter criteria'
+  reason: Querying distributed traces to troubleshoot latency is squarely 'logs, metrics, traces' observability
+    management.
+- tag: Spans
+  spec_file: apache-zipkin-spans-api-openapi.yml
+  capability_id: BC-4220.20
+  capability_id_l1: BC-4220
+  capability_name: Observability Management
+  confidence: 0.8
+  evidence: POST /spans uploadSpans 'Upload a list of spans'; schemas Span, Annotation, Endpoint
+  reason: Span ingestion and span-name lookup are the instrumentation/collection side of distributed tracing
+    — observability of the running service.
+- tag: Services
+  spec_file: apache-zipkin-services-api-openapi.yml
+  capability_id: BC-4220.20
+  capability_id_l1: BC-4220
+  capability_name: Observability Management
+  confidence: 0.72
+  evidence: GET /dependencies getDependencies 'Get service dependency links'; 'List service names with
+    recorded spans'
+  reason: Zipkin is a distributed tracing system; these operations expose service names and service dependency
+    links derived from trace data, which is production observability (traces/metrics) of a running service,
+    not any business-domain service catalogue.

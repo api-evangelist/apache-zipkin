@@ -109,6 +109,9 @@ apis:
   - type: Documentation
     url: https://zipkin.io/zipkin-api/
 common:
+  - type: CapabilityMap
+    url: capabilities/apache-zipkin-capability-edges.yml
+    name: Apache Zipkin Business Capability Map
   - type: IssueTracker
     url: https://github.com/openzipkin/zipkin/issues
   - type: SecurityPolicy
