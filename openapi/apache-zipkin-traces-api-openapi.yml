@@ -115,22 +115,6 @@ paths:
                 $ref: '#/components/schemas/ListOfTraces'
 components:
   schemas:
-    Annotation:
-      type: object
-      properties:
-        timestamp:
-          type: integer
-          format: int64
-        value:
-          type: string
-    Trace:
-      type: array
-      items:
-        $ref: '#/components/schemas/Span'
-    ListOfTraces:
-      type: array
-      items:
-        $ref: '#/components/schemas/Trace'
     Endpoint:
       type: object
       properties:
@@ -144,6 +128,14 @@ components:
           format: ipv6
         port:
           type: integer
+    Annotation:
+      type: object
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+        value:
+          type: string
     Span:
       type: object
       required:
@@ -190,3 +182,11 @@ components:
           type: boolean
         shared:
           type: boolean
+    ListOfTraces:
+      type: array
+      items:
+        $ref: '#/components/schemas/Trace'
+    Trace:
+      type: array
+      items:
+        $ref: '#/components/schemas/Span'
