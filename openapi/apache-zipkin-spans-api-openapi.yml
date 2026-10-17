@@ -64,6 +64,10 @@ paths:
           description: Malformed span payload
 components:
   schemas:
+    ListOfSpans:
+      type: array
+      items:
+        $ref: '#/components/schemas/Span'
     Endpoint:
       type: object
       properties:
@@ -85,10 +89,6 @@ components:
           format: int64
         value:
           type: string
-    ListOfSpans:
-      type: array
-      items:
-        $ref: '#/components/schemas/Span'
     Span:
       type: object
       required:
