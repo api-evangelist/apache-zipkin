@@ -1,4 +1,4 @@
-# Apache Zipkin (apache-zipkin)
+# Apache Zipkin
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,86 @@
 
 Apache Zipkin is a distributed tracing system that helps gather timing data needed to troubleshoot latency problems in service architectures. It manages both the collection and lookup of tracing data through a collector and query service. Zipkin provides a REST API, web UI, and multiple storage backends (Cassandra, Elasticsearch, MySQL). It supports the B3 propagation format and is compatible with OpenZipkin instrumentation libraries. Originally created at Twitter, it is now maintained as an open-source project.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apache-zipkin/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-zipkin/refs/heads/main/apis.yml)
+**Areas:** Distributed Tracing · Microservices · Monitoring · Observability · Open Source
 
-## Scope
+## Apache Zipkin on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Apache Zipkin is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-zipkin/](https://apis.io/providers/apache-zipkin/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Distributed Tracing
-- Microservices
-- Monitoring
-- Observability
-- Open Source
+- [Apache Zipkin Autocomplete API](https://apis.io/apis/apache-zipkin/apache-zipkin-autocomplete-api/) — Tag key/value autocompletion
+- [Apache Zipkin Services API](https://apis.io/apis/apache-zipkin/apache-zipkin-services-api/) — Service discovery and dependency links
+- [Apache Zipkin Spans API](https://apis.io/apis/apache-zipkin/apache-zipkin-spans-api/) — Ingest spans and query span names
+- [Apache Zipkin Traces API](https://apis.io/apis/apache-zipkin/apache-zipkin-traces-api/) — Query trace data
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Apache Zipkin REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Zipkin REST API v2 provides endpoints for querying trace data, service names, span names, and dependencies. Key endpoints include GET /api/v2/services (list services), GET /api/v2/spans (list span names for a service), GET /api/v2/traces (search traces by service, span, tags, duration), GET /api/v2/trace/{traceId} (get a specific trace), and GET /api/v2/dependencies (service dependency graph). Span reporting uses POST /api/v2/spans for JSON format or POST /api/v2/spans for Thrift format.
+- [Apache Zipkin Agentic Access](https://apis.io/agentic-access/apache-zipkin/apache-zipkin-agentic-access/)
 
-- **Human URL:** [https://zipkin.io/zipkin-api/](https://zipkin.io/zipkin-api/)
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- REST
-- Distributed Tracing
-- Monitoring
-- Observability
+- [Zipkin API](https://apis.io/collections/apache-zipkin/open-apache-zipkin/)
+- [Zipkin autocomplete API](https://apis.io/collections/apache-zipkin/open-apache-zipkin-autocomplete-api/)
+- [Zipkin autocomplete services API](https://apis.io/collections/apache-zipkin/open-apache-zipkin-services-api/)
+- [Zipkin autocomplete spans API](https://apis.io/collections/apache-zipkin/open-apache-zipkin-spans-api/)
+- [Zipkin autocomplete traces API](https://apis.io/collections/apache-zipkin/open-apache-zipkin-traces-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://zipkin.io/zipkin-api/)
-- [OpenAPI](https://raw.githubusercontent.com/openzipkin/zipkin-api/master/zipkin2-api.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/apache-zipkin.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-zipkin.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Apache Zipkin Domain Security](https://apis.io/security/apache-zipkin/apache-zipkin-domain-security/)
 
-- [GitHub Repository](https://github.com/openzipkin/zipkin)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Zipkin Plans Pricing](https://apis.io/plans/apache-zipkin/apache-zipkin-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Zipkin Rate Limits](https://apis.io/rate-limits/apache-zipkin/apache-zipkin-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Zipkin Finops](https://apis.io/finops/apache-zipkin/apache-zipkin-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Documentation](https://zipkin.io/pages/documentation.html)
-- [Portal](https://zipkin.io/)
-- [Getting Started](https://zipkin.io/pages/quickstart.html)
-- [Release Notes](https://github.com/openzipkin/zipkin/releases)
+- [Getting started](https://zipkin.io/pages/quickstart.html)
 - [Support](https://gitter.im/openzipkin/zipkin)
-- [Terms of Service](https://www.apache.org/licenses/)
-- [SDK](https://pypi.org/project/py_zipkin/)
-- [SDK](https://search.maven.org/search?q=io.zipkin)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://www.apache.org/licenses/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Zipkin: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-zipkin/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
